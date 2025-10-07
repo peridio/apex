@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as MyPageRouteImport } from './routes/my-page'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DemoTableRouteImport } from './routes/demo/table'
 import { Route as DemoStartServerFuncsRouteImport } from './routes/demo/start.server-funcs'
@@ -21,11 +20,6 @@ import { Route as DemoStartSsrSpaModeRouteImport } from './routes/demo/start.ssr
 import { Route as DemoStartSsrFullSsrRouteImport } from './routes/demo/start.ssr.full-ssr'
 import { Route as DemoStartSsrDataOnlyRouteImport } from './routes/demo/start.ssr.data-only'
 
-const MyPageRoute = MyPageRouteImport.update({
-  id: '/my-page',
-  path: '/my-page',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -79,7 +73,6 @@ const DemoStartSsrDataOnlyRoute = DemoStartSsrDataOnlyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/my-page': typeof MyPageRoute
   '/demo/table': typeof DemoTableRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/sentry/testing': typeof DemoSentryTestingRoute
@@ -92,7 +85,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/my-page': typeof MyPageRoute
   '/demo/table': typeof DemoTableRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/sentry/testing': typeof DemoSentryTestingRoute
@@ -106,7 +98,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/my-page': typeof MyPageRoute
   '/demo/table': typeof DemoTableRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/sentry/testing': typeof DemoSentryTestingRoute
@@ -121,7 +112,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/my-page'
     | '/demo/table'
     | '/demo/api/names'
     | '/demo/sentry/testing'
@@ -134,7 +124,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/my-page'
     | '/demo/table'
     | '/demo/api/names'
     | '/demo/sentry/testing'
@@ -147,7 +136,6 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/my-page'
     | '/demo/table'
     | '/demo/api/names'
     | '/demo/sentry/testing'
@@ -161,7 +149,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  MyPageRoute: typeof MyPageRoute
   DemoTableRoute: typeof DemoTableRoute
   DemoApiNamesRoute: typeof DemoApiNamesRoute
   DemoSentryTestingRoute: typeof DemoSentryTestingRoute
@@ -175,13 +162,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/my-page': {
-      id: '/my-page'
-      path: '/my-page'
-      fullPath: '/my-page'
-      preLoaderRoute: typeof MyPageRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -257,7 +237,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  MyPageRoute: MyPageRoute,
   DemoTableRoute: DemoTableRoute,
   DemoApiNamesRoute: DemoApiNamesRoute,
   DemoSentryTestingRoute: DemoSentryTestingRoute,
