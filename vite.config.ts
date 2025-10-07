@@ -7,6 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { wrapVinxiConfigWithSentry } from "@sentry/tanstackstart-react";
 
 const config = defineConfig({
+  base: "/apex/",
   plugins: [
     // this is the plugin that enables path aliases
     viteTsConfigPaths({
