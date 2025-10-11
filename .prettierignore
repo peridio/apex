@@ -1,0 +1,8 @@
+node_modules
+dist
+build
+.vite
+coverage
+*.gen.ts
+routeTree.gen.ts
+
