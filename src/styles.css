@@ -1,15 +1,175 @@
 @import "tailwindcss";
 
+@theme {
+  /* Font families */
+  --font-montserrat: Montserrat, sans-serif;
+  --font-arial: Arial, Helvetica, sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+
+  /* Shadcn UI theme variables */
+  --color-background: 0 0% 100%;
+  --color-foreground: 0 0% 3.9%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 0 0% 3.9%;
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 0 0% 3.9%;
+  --color-primary: 0 0% 9%;
+  --color-primary-foreground: 0 0% 98%;
+  --color-secondary: 240 4.8% 95.9%;
+  --color-secondary-foreground: 240 5.9% 10%;
+  --color-muted: 240 4.8% 95.9%;
+  --color-muted-foreground: 240 3.8% 46.1%;
+  --color-accent: 240 4.8% 95.9%;
+  --color-accent-foreground: 240 5.9% 10%;
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 0 0% 98%;
+  --color-border: 240 5.9% 90%;
+  --color-input: 240 5.9% 90%;
+  --color-ring: 240 5% 64.9%;
+  --radius: 0.5rem;
+
+  /* Primary Peridio colors - extracted from actual site */
+  --color-peridio-purple: #5f51ff;
+  --color-peridio-purple-light: #7f75ff;
+  --color-peridio-purple-lighter: #afa8ff;
+  --color-peridio-purple-dark: #4a3fcc;
+  --color-peridio-green: #10b981;
+  --color-peridio-green-light: #34d399;
+  --color-peridio-green-dark: #059669;
+
+  /* Button colors - Primary (from --bg: 95, 81, 255) */
+  --color-button-primary: #5f51ff;
+  --color-button-primary-hover: #4a3fcc;
+  --color-button-primary-disabled: #eeeeee;
+  --color-button-text-primary: #ffffff;
+  --color-button-text-primary-hover: #ffffff;
+  --color-button-text-primary-disabled: #8d8d8d;
+
+  /* Button colors - Secondary (Outlined) */
+  --color-button-secondary: transparent;
+  --color-button-secondary-hover: rgba(95, 81, 255, 0.1);
+  --color-button-secondary-disabled: transparent;
+  --color-button-text-secondary: #ffffff;
+  --color-button-text-secondary-hover: #7f75ff;
+  --color-button-text-secondary-disabled: #8d8d8d;
+
+  /* Base fill colors */
+  --color-fill-base-1: #000000;
+  --color-fill-base-2: #0a0a0a;
+  --color-fill-base-shade-1: #1a1a1a;
+  --color-fill-base-shade-2: #262626;
+  --color-fill-base-shade-3: #333333;
+  --color-fill-base-shade-4: #1a1d21;
+
+  /* Accent fill colors */
+  --color-fill-accent-1: #5f51ff;
+  --color-fill-accent-2: #4a3fcc;
+  --color-fill-accent-3: #10b981;
+  --color-fill-accent-4: #059669;
+
+  /* Background colors */
+  --color-fill-background-primary: #000000;
+  --color-fill-background-secondary: #0a0a0a;
+
+  /* Text colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a3a3a3;
+  --color-text-tertiary: #c2c2c2;
+  --color-action: #5f51ff;
+  --color-disabled: #8d8d8d;
+  --color-title: #ffffff;
+  --color-subtitle: #d4d4d4;
+  --color-line: #323232;
+
+  /* Custom colors (mapped from Wix color variables) */
+  --color-custom-1: #000000;
+  --color-custom-2: #5f51ff;
+  --color-custom-3: #4a3fcc;
+  --color-custom-4: #7f75ff;
+  --color-custom-5: #10b981;
+  --color-custom-6: #059669;
+  --color-custom-7: #34d399;
+  --color-custom-8: #1a1a1a;
+  --color-custom-9: #262626;
+  --color-custom-10: #333333;
+  --color-custom-11: #ffffff;
+  --color-custom-12: #525252;
+  --color-custom-13: #666666;
+  --color-custom-14: #737373;
+  --color-custom-15: #323232;
+  --color-custom-16: #d4d4d4;
+  --color-custom-17: #5f51ff;
+  --color-custom-18: #f5f5f5;
+  --color-custom-19: #fafafa;
+  --color-custom-20: #ffffff;
+
+  /* Shadow for buttons (from --shd) */
+  --shadow-button: 0px 3px 12px 3px rgba(0, 0, 0, 0.19);
+  --color-outline-transparent-secondary: rgba(110, 110, 110, 0.5);
+}
+
+:root {
+  /* Button layout variables (from Wix) */
+  --margin-start: 0px;
+  --margin-end: 0px;
+  --label-align: center;
+  --label-text-align: center;
+  --shc-mutated-brightness: 95, 81, 255;
+
+  /* Wix button variables */
+  --bg: 95, 81, 255;
+  --txt: 255, 255, 255;
+  --brd: 50, 50, 50;
+  --brw: 0px;
+  --rd: 4px;
+  --horizontalPadding: 0px;
+  --verticalPadding: 0px;
+
+  /* Transition timing */
+  --transition-button: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+  --trans1: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+  --trans2: color 0.4s ease 0s;
+
+  /* Scaling variables for responsive typography */
+  --full-viewport: 100vw;
+  --section-max-width: 1200px;
+  --scaling-factor: min(var(--full-viewport), var(--section-max-width));
+  --theme-spx-ratio: calc(var(--scaling-factor) / 1002);
+}
+
+html,
+body {
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+
+html {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
 body {
   @apply m-0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Logo slider animation */
+@keyframes logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-150px * 11));
+  }
 }
