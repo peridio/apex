@@ -1,15 +1,85 @@
 @import "tailwindcss";
 
+@theme {
+  /* Font families */
+  --font-arial: Arial, Helvetica, sans-serif;
+  --font-montserrat: Montserrat, sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+
+  /* Primary Peridio colors - extracted from actual site */
+  --color-peridio-purple: #5f51ff;
+  --color-peridio-purple-light: #7f75ff;
+  --color-peridio-purple-lighter: #afa8ff;
+
+  /* Base fill colors */
+  --color-fill-base-shade-4: #1a1d21;
+
+  /* Text colors */
+  --color-text-tertiary: #c2c2c2;
+
+  /* Shadow for buttons (from --shd) */
+  --shadow-button: 0px 3px 12px 3px rgba(0, 0, 0, 0.19);
+  --color-outline-transparent-secondary: rgba(110, 110, 110, 0.5);
+
+  /* Accordion animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+:root {
+  /* Scaling variables for responsive typography */
+  --full-viewport: 100vw;
+  --section-max-width: 1200px;
+  --scaling-factor: min(var(--full-viewport), var(--section-max-width));
+  --theme-spx-ratio: calc(var(--scaling-factor) / 1002);
+}
+
+html,
+body {
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   @apply m-0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* Logo slider animation */
+@keyframes logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-150px * 11));
+  }
+}
+
+/* Accordion animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }
