@@ -9,159 +9,612 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UiRouteImport } from './routes/ui'
+import { Route as SignUpRouteImport } from './routes/sign-up'
+import { Route as ProvisioningGuideUpdatesRouteImport } from './routes/provisioning-guide-updates'
+import { Route as PodcastGuestFormRouteImport } from './routes/podcast-guest-form'
+import { Route as PodcastBeyondTheBenchRouteImport } from './routes/podcast-beyond-the-bench'
+import { Route as PeridioCoreRouteImport } from './routes/peridio-core'
+import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as PartnerProgramRouteImport } from './routes/partner-program'
+import { Route as LongTermSupportRouteImport } from './routes/long-term-support'
+import { Route as LearnMoreRouteImport } from './routes/learn-more'
+import { Route as JoinOurDiscordRouteImport } from './routes/join-our-discord'
+import { Route as IndustryTelematicsRouteImport } from './routes/industry-telematics'
+import { Route as IndustrySmarthomesRouteImport } from './routes/industry-smarthomes'
+import { Route as IndustryIndustrialIotRouteImport } from './routes/industry-industrial-iot'
+import { Route as IndustryHealthAndWearablesRouteImport } from './routes/industry-health-and-wearables'
+import { Route as IndustryEnergyAndRenewablesRouteImport } from './routes/industry-energy-and-renewables'
+import { Route as IndustryConsumerElectronicsRouteImport } from './routes/industry-consumer-electronics'
+import { Route as FirstBootRouteImport } from './routes/first-boot'
+import { Route as DeveloperProgramRouteImport } from './routes/developer-program'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CompanyRouteImport } from './routes/company'
+import { Route as BookAMeetingRouteImport } from './routes/book-a-meeting'
+import { Route as AvocadoOsRouteImport } from './routes/avocado-os'
+import { Route as AvocadoLinuxWhitepaperRouteImport } from './routes/avocado-linux-whitepaper'
+import { Route as AiReadyRouteImport } from './routes/ai-ready'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as DemoTableRouteImport } from './routes/demo/table'
-import { Route as DemoStartServerFuncsRouteImport } from './routes/demo/start.server-funcs'
-import { Route as DemoStartApiRequestRouteImport } from './routes/demo/start.api-request'
-import { Route as DemoSentryTestingRouteImport } from './routes/demo/sentry.testing'
-import { Route as DemoApiNamesRouteImport } from './routes/demo/api.names'
-import { Route as DemoStartSsrIndexRouteImport } from './routes/demo/start.ssr.index'
-import { Route as DemoStartSsrSpaModeRouteImport } from './routes/demo/start.ssr.spa-mode'
-import { Route as DemoStartSsrFullSsrRouteImport } from './routes/demo/start.ssr.full-ssr'
-import { Route as DemoStartSsrDataOnlyRouteImport } from './routes/demo/start.ssr.data-only'
+import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
+import { Route as CaseStudiesTellyRouteImport } from './routes/case-studies.telly'
+import { Route as CaseStudiesSunAutomationRouteImport } from './routes/case-studies.sun-automation'
+import { Route as CaseStudiesGraniteRouteImport } from './routes/case-studies.granite'
+import { Route as CaseStudiesFellowesRouteImport } from './routes/case-studies.fellowes'
 
+const UiRoute = UiRouteImport.update({
+  id: '/ui',
+  path: '/ui',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignUpRoute = SignUpRouteImport.update({
+  id: '/sign-up',
+  path: '/sign-up',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProvisioningGuideUpdatesRoute =
+  ProvisioningGuideUpdatesRouteImport.update({
+    id: '/provisioning-guide-updates',
+    path: '/provisioning-guide-updates',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PodcastGuestFormRoute = PodcastGuestFormRouteImport.update({
+  id: '/podcast-guest-form',
+  path: '/podcast-guest-form',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PodcastBeyondTheBenchRoute = PodcastBeyondTheBenchRouteImport.update({
+  id: '/podcast-beyond-the-bench',
+  path: '/podcast-beyond-the-bench',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PeridioCoreRoute = PeridioCoreRouteImport.update({
+  id: '/peridio-core',
+  path: '/peridio-core',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnerProgramRoute = PartnerProgramRouteImport.update({
+  id: '/partner-program',
+  path: '/partner-program',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LongTermSupportRoute = LongTermSupportRouteImport.update({
+  id: '/long-term-support',
+  path: '/long-term-support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnMoreRoute = LearnMoreRouteImport.update({
+  id: '/learn-more',
+  path: '/learn-more',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinOurDiscordRoute = JoinOurDiscordRouteImport.update({
+  id: '/join-our-discord',
+  path: '/join-our-discord',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustryTelematicsRoute = IndustryTelematicsRouteImport.update({
+  id: '/industry-telematics',
+  path: '/industry-telematics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustrySmarthomesRoute = IndustrySmarthomesRouteImport.update({
+  id: '/industry-smarthomes',
+  path: '/industry-smarthomes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustryIndustrialIotRoute = IndustryIndustrialIotRouteImport.update({
+  id: '/industry-industrial-iot',
+  path: '/industry-industrial-iot',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustryHealthAndWearablesRoute =
+  IndustryHealthAndWearablesRouteImport.update({
+    id: '/industry-health-and-wearables',
+    path: '/industry-health-and-wearables',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const IndustryEnergyAndRenewablesRoute =
+  IndustryEnergyAndRenewablesRouteImport.update({
+    id: '/industry-energy-and-renewables',
+    path: '/industry-energy-and-renewables',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const IndustryConsumerElectronicsRoute =
+  IndustryConsumerElectronicsRouteImport.update({
+    id: '/industry-consumer-electronics',
+    path: '/industry-consumer-electronics',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FirstBootRoute = FirstBootRouteImport.update({
+  id: '/first-boot',
+  path: '/first-boot',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeveloperProgramRoute = DeveloperProgramRouteImport.update({
+  id: '/developer-program',
+  path: '/developer-program',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompanyRoute = CompanyRouteImport.update({
+  id: '/company',
+  path: '/company',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookAMeetingRoute = BookAMeetingRouteImport.update({
+  id: '/book-a-meeting',
+  path: '/book-a-meeting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AvocadoOsRoute = AvocadoOsRouteImport.update({
+  id: '/avocado-os',
+  path: '/avocado-os',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AvocadoLinuxWhitepaperRoute = AvocadoLinuxWhitepaperRouteImport.update({
+  id: '/avocado-linux-whitepaper',
+  path: '/avocado-linux-whitepaper',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiReadyRoute = AiReadyRouteImport.update({
+  id: '/ai-ready',
+  path: '/ai-ready',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoTableRoute = DemoTableRouteImport.update({
-  id: '/demo/table',
-  path: '/demo/table',
+const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
+  id: '/case-studies/',
+  path: '/case-studies/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoStartServerFuncsRoute = DemoStartServerFuncsRouteImport.update({
-  id: '/demo/start/server-funcs',
-  path: '/demo/start/server-funcs',
+const CaseStudiesTellyRoute = CaseStudiesTellyRouteImport.update({
+  id: '/case-studies/telly',
+  path: '/case-studies/telly',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoStartApiRequestRoute = DemoStartApiRequestRouteImport.update({
-  id: '/demo/start/api-request',
-  path: '/demo/start/api-request',
+const CaseStudiesSunAutomationRoute =
+  CaseStudiesSunAutomationRouteImport.update({
+    id: '/case-studies/sun-automation',
+    path: '/case-studies/sun-automation',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CaseStudiesGraniteRoute = CaseStudiesGraniteRouteImport.update({
+  id: '/case-studies/granite',
+  path: '/case-studies/granite',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoSentryTestingRoute = DemoSentryTestingRouteImport.update({
-  id: '/demo/sentry/testing',
-  path: '/demo/sentry/testing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DemoApiNamesRoute = DemoApiNamesRouteImport.update({
-  id: '/demo/api/names',
-  path: '/demo/api/names',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DemoStartSsrIndexRoute = DemoStartSsrIndexRouteImport.update({
-  id: '/demo/start/ssr/',
-  path: '/demo/start/ssr/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DemoStartSsrSpaModeRoute = DemoStartSsrSpaModeRouteImport.update({
-  id: '/demo/start/ssr/spa-mode',
-  path: '/demo/start/ssr/spa-mode',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DemoStartSsrFullSsrRoute = DemoStartSsrFullSsrRouteImport.update({
-  id: '/demo/start/ssr/full-ssr',
-  path: '/demo/start/ssr/full-ssr',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DemoStartSsrDataOnlyRoute = DemoStartSsrDataOnlyRouteImport.update({
-  id: '/demo/start/ssr/data-only',
-  path: '/demo/start/ssr/data-only',
+const CaseStudiesFellowesRoute = CaseStudiesFellowesRouteImport.update({
+  id: '/case-studies/fellowes',
+  path: '/case-studies/fellowes',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/demo/table': typeof DemoTableRoute
-  '/demo/api/names': typeof DemoApiNamesRoute
-  '/demo/sentry/testing': typeof DemoSentryTestingRoute
-  '/demo/start/api-request': typeof DemoStartApiRequestRoute
-  '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
-  '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
-  '/demo/start/ssr/full-ssr': typeof DemoStartSsrFullSsrRoute
-  '/demo/start/ssr/spa-mode': typeof DemoStartSsrSpaModeRoute
-  '/demo/start/ssr': typeof DemoStartSsrIndexRoute
+  '/ai-ready': typeof AiReadyRoute
+  '/avocado-linux-whitepaper': typeof AvocadoLinuxWhitepaperRoute
+  '/avocado-os': typeof AvocadoOsRoute
+  '/book-a-meeting': typeof BookAMeetingRoute
+  '/company': typeof CompanyRoute
+  '/contact': typeof ContactRoute
+  '/developer-program': typeof DeveloperProgramRoute
+  '/first-boot': typeof FirstBootRoute
+  '/industry-consumer-electronics': typeof IndustryConsumerElectronicsRoute
+  '/industry-energy-and-renewables': typeof IndustryEnergyAndRenewablesRoute
+  '/industry-health-and-wearables': typeof IndustryHealthAndWearablesRoute
+  '/industry-industrial-iot': typeof IndustryIndustrialIotRoute
+  '/industry-smarthomes': typeof IndustrySmarthomesRoute
+  '/industry-telematics': typeof IndustryTelematicsRoute
+  '/join-our-discord': typeof JoinOurDiscordRoute
+  '/learn-more': typeof LearnMoreRoute
+  '/long-term-support': typeof LongTermSupportRoute
+  '/partner-program': typeof PartnerProgramRoute
+  '/partners': typeof PartnersRoute
+  '/peridio-core': typeof PeridioCoreRoute
+  '/podcast-beyond-the-bench': typeof PodcastBeyondTheBenchRoute
+  '/podcast-guest-form': typeof PodcastGuestFormRoute
+  '/provisioning-guide-updates': typeof ProvisioningGuideUpdatesRoute
+  '/sign-up': typeof SignUpRoute
+  '/ui': typeof UiRoute
+  '/case-studies/fellowes': typeof CaseStudiesFellowesRoute
+  '/case-studies/granite': typeof CaseStudiesGraniteRoute
+  '/case-studies/sun-automation': typeof CaseStudiesSunAutomationRoute
+  '/case-studies/telly': typeof CaseStudiesTellyRoute
+  '/case-studies': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/demo/table': typeof DemoTableRoute
-  '/demo/api/names': typeof DemoApiNamesRoute
-  '/demo/sentry/testing': typeof DemoSentryTestingRoute
-  '/demo/start/api-request': typeof DemoStartApiRequestRoute
-  '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
-  '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
-  '/demo/start/ssr/full-ssr': typeof DemoStartSsrFullSsrRoute
-  '/demo/start/ssr/spa-mode': typeof DemoStartSsrSpaModeRoute
-  '/demo/start/ssr': typeof DemoStartSsrIndexRoute
+  '/ai-ready': typeof AiReadyRoute
+  '/avocado-linux-whitepaper': typeof AvocadoLinuxWhitepaperRoute
+  '/avocado-os': typeof AvocadoOsRoute
+  '/book-a-meeting': typeof BookAMeetingRoute
+  '/company': typeof CompanyRoute
+  '/contact': typeof ContactRoute
+  '/developer-program': typeof DeveloperProgramRoute
+  '/first-boot': typeof FirstBootRoute
+  '/industry-consumer-electronics': typeof IndustryConsumerElectronicsRoute
+  '/industry-energy-and-renewables': typeof IndustryEnergyAndRenewablesRoute
+  '/industry-health-and-wearables': typeof IndustryHealthAndWearablesRoute
+  '/industry-industrial-iot': typeof IndustryIndustrialIotRoute
+  '/industry-smarthomes': typeof IndustrySmarthomesRoute
+  '/industry-telematics': typeof IndustryTelematicsRoute
+  '/join-our-discord': typeof JoinOurDiscordRoute
+  '/learn-more': typeof LearnMoreRoute
+  '/long-term-support': typeof LongTermSupportRoute
+  '/partner-program': typeof PartnerProgramRoute
+  '/partners': typeof PartnersRoute
+  '/peridio-core': typeof PeridioCoreRoute
+  '/podcast-beyond-the-bench': typeof PodcastBeyondTheBenchRoute
+  '/podcast-guest-form': typeof PodcastGuestFormRoute
+  '/provisioning-guide-updates': typeof ProvisioningGuideUpdatesRoute
+  '/sign-up': typeof SignUpRoute
+  '/ui': typeof UiRoute
+  '/case-studies/fellowes': typeof CaseStudiesFellowesRoute
+  '/case-studies/granite': typeof CaseStudiesGraniteRoute
+  '/case-studies/sun-automation': typeof CaseStudiesSunAutomationRoute
+  '/case-studies/telly': typeof CaseStudiesTellyRoute
+  '/case-studies': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/demo/table': typeof DemoTableRoute
-  '/demo/api/names': typeof DemoApiNamesRoute
-  '/demo/sentry/testing': typeof DemoSentryTestingRoute
-  '/demo/start/api-request': typeof DemoStartApiRequestRoute
-  '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
-  '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
-  '/demo/start/ssr/full-ssr': typeof DemoStartSsrFullSsrRoute
-  '/demo/start/ssr/spa-mode': typeof DemoStartSsrSpaModeRoute
-  '/demo/start/ssr/': typeof DemoStartSsrIndexRoute
+  '/ai-ready': typeof AiReadyRoute
+  '/avocado-linux-whitepaper': typeof AvocadoLinuxWhitepaperRoute
+  '/avocado-os': typeof AvocadoOsRoute
+  '/book-a-meeting': typeof BookAMeetingRoute
+  '/company': typeof CompanyRoute
+  '/contact': typeof ContactRoute
+  '/developer-program': typeof DeveloperProgramRoute
+  '/first-boot': typeof FirstBootRoute
+  '/industry-consumer-electronics': typeof IndustryConsumerElectronicsRoute
+  '/industry-energy-and-renewables': typeof IndustryEnergyAndRenewablesRoute
+  '/industry-health-and-wearables': typeof IndustryHealthAndWearablesRoute
+  '/industry-industrial-iot': typeof IndustryIndustrialIotRoute
+  '/industry-smarthomes': typeof IndustrySmarthomesRoute
+  '/industry-telematics': typeof IndustryTelematicsRoute
+  '/join-our-discord': typeof JoinOurDiscordRoute
+  '/learn-more': typeof LearnMoreRoute
+  '/long-term-support': typeof LongTermSupportRoute
+  '/partner-program': typeof PartnerProgramRoute
+  '/partners': typeof PartnersRoute
+  '/peridio-core': typeof PeridioCoreRoute
+  '/podcast-beyond-the-bench': typeof PodcastBeyondTheBenchRoute
+  '/podcast-guest-form': typeof PodcastGuestFormRoute
+  '/provisioning-guide-updates': typeof ProvisioningGuideUpdatesRoute
+  '/sign-up': typeof SignUpRoute
+  '/ui': typeof UiRoute
+  '/case-studies/fellowes': typeof CaseStudiesFellowesRoute
+  '/case-studies/granite': typeof CaseStudiesGraniteRoute
+  '/case-studies/sun-automation': typeof CaseStudiesSunAutomationRoute
+  '/case-studies/telly': typeof CaseStudiesTellyRoute
+  '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/demo/table'
-    | '/demo/api/names'
-    | '/demo/sentry/testing'
-    | '/demo/start/api-request'
-    | '/demo/start/server-funcs'
-    | '/demo/start/ssr/data-only'
-    | '/demo/start/ssr/full-ssr'
-    | '/demo/start/ssr/spa-mode'
-    | '/demo/start/ssr'
+    | '/ai-ready'
+    | '/avocado-linux-whitepaper'
+    | '/avocado-os'
+    | '/book-a-meeting'
+    | '/company'
+    | '/contact'
+    | '/developer-program'
+    | '/first-boot'
+    | '/industry-consumer-electronics'
+    | '/industry-energy-and-renewables'
+    | '/industry-health-and-wearables'
+    | '/industry-industrial-iot'
+    | '/industry-smarthomes'
+    | '/industry-telematics'
+    | '/join-our-discord'
+    | '/learn-more'
+    | '/long-term-support'
+    | '/partner-program'
+    | '/partners'
+    | '/peridio-core'
+    | '/podcast-beyond-the-bench'
+    | '/podcast-guest-form'
+    | '/provisioning-guide-updates'
+    | '/sign-up'
+    | '/ui'
+    | '/case-studies/fellowes'
+    | '/case-studies/granite'
+    | '/case-studies/sun-automation'
+    | '/case-studies/telly'
+    | '/case-studies'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/demo/table'
-    | '/demo/api/names'
-    | '/demo/sentry/testing'
-    | '/demo/start/api-request'
-    | '/demo/start/server-funcs'
-    | '/demo/start/ssr/data-only'
-    | '/demo/start/ssr/full-ssr'
-    | '/demo/start/ssr/spa-mode'
-    | '/demo/start/ssr'
+    | '/ai-ready'
+    | '/avocado-linux-whitepaper'
+    | '/avocado-os'
+    | '/book-a-meeting'
+    | '/company'
+    | '/contact'
+    | '/developer-program'
+    | '/first-boot'
+    | '/industry-consumer-electronics'
+    | '/industry-energy-and-renewables'
+    | '/industry-health-and-wearables'
+    | '/industry-industrial-iot'
+    | '/industry-smarthomes'
+    | '/industry-telematics'
+    | '/join-our-discord'
+    | '/learn-more'
+    | '/long-term-support'
+    | '/partner-program'
+    | '/partners'
+    | '/peridio-core'
+    | '/podcast-beyond-the-bench'
+    | '/podcast-guest-form'
+    | '/provisioning-guide-updates'
+    | '/sign-up'
+    | '/ui'
+    | '/case-studies/fellowes'
+    | '/case-studies/granite'
+    | '/case-studies/sun-automation'
+    | '/case-studies/telly'
+    | '/case-studies'
   id:
     | '__root__'
     | '/'
-    | '/demo/table'
-    | '/demo/api/names'
-    | '/demo/sentry/testing'
-    | '/demo/start/api-request'
-    | '/demo/start/server-funcs'
-    | '/demo/start/ssr/data-only'
-    | '/demo/start/ssr/full-ssr'
-    | '/demo/start/ssr/spa-mode'
-    | '/demo/start/ssr/'
+    | '/ai-ready'
+    | '/avocado-linux-whitepaper'
+    | '/avocado-os'
+    | '/book-a-meeting'
+    | '/company'
+    | '/contact'
+    | '/developer-program'
+    | '/first-boot'
+    | '/industry-consumer-electronics'
+    | '/industry-energy-and-renewables'
+    | '/industry-health-and-wearables'
+    | '/industry-industrial-iot'
+    | '/industry-smarthomes'
+    | '/industry-telematics'
+    | '/join-our-discord'
+    | '/learn-more'
+    | '/long-term-support'
+    | '/partner-program'
+    | '/partners'
+    | '/peridio-core'
+    | '/podcast-beyond-the-bench'
+    | '/podcast-guest-form'
+    | '/provisioning-guide-updates'
+    | '/sign-up'
+    | '/ui'
+    | '/case-studies/fellowes'
+    | '/case-studies/granite'
+    | '/case-studies/sun-automation'
+    | '/case-studies/telly'
+    | '/case-studies/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  DemoTableRoute: typeof DemoTableRoute
-  DemoApiNamesRoute: typeof DemoApiNamesRoute
-  DemoSentryTestingRoute: typeof DemoSentryTestingRoute
-  DemoStartApiRequestRoute: typeof DemoStartApiRequestRoute
-  DemoStartServerFuncsRoute: typeof DemoStartServerFuncsRoute
-  DemoStartSsrDataOnlyRoute: typeof DemoStartSsrDataOnlyRoute
-  DemoStartSsrFullSsrRoute: typeof DemoStartSsrFullSsrRoute
-  DemoStartSsrSpaModeRoute: typeof DemoStartSsrSpaModeRoute
-  DemoStartSsrIndexRoute: typeof DemoStartSsrIndexRoute
+  AiReadyRoute: typeof AiReadyRoute
+  AvocadoLinuxWhitepaperRoute: typeof AvocadoLinuxWhitepaperRoute
+  AvocadoOsRoute: typeof AvocadoOsRoute
+  BookAMeetingRoute: typeof BookAMeetingRoute
+  CompanyRoute: typeof CompanyRoute
+  ContactRoute: typeof ContactRoute
+  DeveloperProgramRoute: typeof DeveloperProgramRoute
+  FirstBootRoute: typeof FirstBootRoute
+  IndustryConsumerElectronicsRoute: typeof IndustryConsumerElectronicsRoute
+  IndustryEnergyAndRenewablesRoute: typeof IndustryEnergyAndRenewablesRoute
+  IndustryHealthAndWearablesRoute: typeof IndustryHealthAndWearablesRoute
+  IndustryIndustrialIotRoute: typeof IndustryIndustrialIotRoute
+  IndustrySmarthomesRoute: typeof IndustrySmarthomesRoute
+  IndustryTelematicsRoute: typeof IndustryTelematicsRoute
+  JoinOurDiscordRoute: typeof JoinOurDiscordRoute
+  LearnMoreRoute: typeof LearnMoreRoute
+  LongTermSupportRoute: typeof LongTermSupportRoute
+  PartnerProgramRoute: typeof PartnerProgramRoute
+  PartnersRoute: typeof PartnersRoute
+  PeridioCoreRoute: typeof PeridioCoreRoute
+  PodcastBeyondTheBenchRoute: typeof PodcastBeyondTheBenchRoute
+  PodcastGuestFormRoute: typeof PodcastGuestFormRoute
+  ProvisioningGuideUpdatesRoute: typeof ProvisioningGuideUpdatesRoute
+  SignUpRoute: typeof SignUpRoute
+  UiRoute: typeof UiRoute
+  CaseStudiesFellowesRoute: typeof CaseStudiesFellowesRoute
+  CaseStudiesGraniteRoute: typeof CaseStudiesGraniteRoute
+  CaseStudiesSunAutomationRoute: typeof CaseStudiesSunAutomationRoute
+  CaseStudiesTellyRoute: typeof CaseStudiesTellyRoute
+  CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/ui': {
+      id: '/ui'
+      path: '/ui'
+      fullPath: '/ui'
+      preLoaderRoute: typeof UiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-up': {
+      id: '/sign-up'
+      path: '/sign-up'
+      fullPath: '/sign-up'
+      preLoaderRoute: typeof SignUpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/provisioning-guide-updates': {
+      id: '/provisioning-guide-updates'
+      path: '/provisioning-guide-updates'
+      fullPath: '/provisioning-guide-updates'
+      preLoaderRoute: typeof ProvisioningGuideUpdatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/podcast-guest-form': {
+      id: '/podcast-guest-form'
+      path: '/podcast-guest-form'
+      fullPath: '/podcast-guest-form'
+      preLoaderRoute: typeof PodcastGuestFormRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/podcast-beyond-the-bench': {
+      id: '/podcast-beyond-the-bench'
+      path: '/podcast-beyond-the-bench'
+      fullPath: '/podcast-beyond-the-bench'
+      preLoaderRoute: typeof PodcastBeyondTheBenchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/peridio-core': {
+      id: '/peridio-core'
+      path: '/peridio-core'
+      fullPath: '/peridio-core'
+      preLoaderRoute: typeof PeridioCoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partner-program': {
+      id: '/partner-program'
+      path: '/partner-program'
+      fullPath: '/partner-program'
+      preLoaderRoute: typeof PartnerProgramRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/long-term-support': {
+      id: '/long-term-support'
+      path: '/long-term-support'
+      fullPath: '/long-term-support'
+      preLoaderRoute: typeof LongTermSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn-more': {
+      id: '/learn-more'
+      path: '/learn-more'
+      fullPath: '/learn-more'
+      preLoaderRoute: typeof LearnMoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join-our-discord': {
+      id: '/join-our-discord'
+      path: '/join-our-discord'
+      fullPath: '/join-our-discord'
+      preLoaderRoute: typeof JoinOurDiscordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industry-telematics': {
+      id: '/industry-telematics'
+      path: '/industry-telematics'
+      fullPath: '/industry-telematics'
+      preLoaderRoute: typeof IndustryTelematicsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industry-smarthomes': {
+      id: '/industry-smarthomes'
+      path: '/industry-smarthomes'
+      fullPath: '/industry-smarthomes'
+      preLoaderRoute: typeof IndustrySmarthomesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industry-industrial-iot': {
+      id: '/industry-industrial-iot'
+      path: '/industry-industrial-iot'
+      fullPath: '/industry-industrial-iot'
+      preLoaderRoute: typeof IndustryIndustrialIotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industry-health-and-wearables': {
+      id: '/industry-health-and-wearables'
+      path: '/industry-health-and-wearables'
+      fullPath: '/industry-health-and-wearables'
+      preLoaderRoute: typeof IndustryHealthAndWearablesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industry-energy-and-renewables': {
+      id: '/industry-energy-and-renewables'
+      path: '/industry-energy-and-renewables'
+      fullPath: '/industry-energy-and-renewables'
+      preLoaderRoute: typeof IndustryEnergyAndRenewablesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industry-consumer-electronics': {
+      id: '/industry-consumer-electronics'
+      path: '/industry-consumer-electronics'
+      fullPath: '/industry-consumer-electronics'
+      preLoaderRoute: typeof IndustryConsumerElectronicsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/first-boot': {
+      id: '/first-boot'
+      path: '/first-boot'
+      fullPath: '/first-boot'
+      preLoaderRoute: typeof FirstBootRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-program': {
+      id: '/developer-program'
+      path: '/developer-program'
+      fullPath: '/developer-program'
+      preLoaderRoute: typeof DeveloperProgramRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/company': {
+      id: '/company'
+      path: '/company'
+      fullPath: '/company'
+      preLoaderRoute: typeof CompanyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book-a-meeting': {
+      id: '/book-a-meeting'
+      path: '/book-a-meeting'
+      fullPath: '/book-a-meeting'
+      preLoaderRoute: typeof BookAMeetingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/avocado-os': {
+      id: '/avocado-os'
+      path: '/avocado-os'
+      fullPath: '/avocado-os'
+      preLoaderRoute: typeof AvocadoOsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/avocado-linux-whitepaper': {
+      id: '/avocado-linux-whitepaper'
+      path: '/avocado-linux-whitepaper'
+      fullPath: '/avocado-linux-whitepaper'
+      preLoaderRoute: typeof AvocadoLinuxWhitepaperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-ready': {
+      id: '/ai-ready'
+      path: '/ai-ready'
+      fullPath: '/ai-ready'
+      preLoaderRoute: typeof AiReadyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -169,67 +622,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/table': {
-      id: '/demo/table'
-      path: '/demo/table'
-      fullPath: '/demo/table'
-      preLoaderRoute: typeof DemoTableRouteImport
+    '/case-studies/': {
+      id: '/case-studies/'
+      path: '/case-studies'
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof CaseStudiesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/start/server-funcs': {
-      id: '/demo/start/server-funcs'
-      path: '/demo/start/server-funcs'
-      fullPath: '/demo/start/server-funcs'
-      preLoaderRoute: typeof DemoStartServerFuncsRouteImport
+    '/case-studies/telly': {
+      id: '/case-studies/telly'
+      path: '/case-studies/telly'
+      fullPath: '/case-studies/telly'
+      preLoaderRoute: typeof CaseStudiesTellyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/start/api-request': {
-      id: '/demo/start/api-request'
-      path: '/demo/start/api-request'
-      fullPath: '/demo/start/api-request'
-      preLoaderRoute: typeof DemoStartApiRequestRouteImport
+    '/case-studies/sun-automation': {
+      id: '/case-studies/sun-automation'
+      path: '/case-studies/sun-automation'
+      fullPath: '/case-studies/sun-automation'
+      preLoaderRoute: typeof CaseStudiesSunAutomationRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/sentry/testing': {
-      id: '/demo/sentry/testing'
-      path: '/demo/sentry/testing'
-      fullPath: '/demo/sentry/testing'
-      preLoaderRoute: typeof DemoSentryTestingRouteImport
+    '/case-studies/granite': {
+      id: '/case-studies/granite'
+      path: '/case-studies/granite'
+      fullPath: '/case-studies/granite'
+      preLoaderRoute: typeof CaseStudiesGraniteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/api/names': {
-      id: '/demo/api/names'
-      path: '/demo/api/names'
-      fullPath: '/demo/api/names'
-      preLoaderRoute: typeof DemoApiNamesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demo/start/ssr/': {
-      id: '/demo/start/ssr/'
-      path: '/demo/start/ssr'
-      fullPath: '/demo/start/ssr'
-      preLoaderRoute: typeof DemoStartSsrIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demo/start/ssr/spa-mode': {
-      id: '/demo/start/ssr/spa-mode'
-      path: '/demo/start/ssr/spa-mode'
-      fullPath: '/demo/start/ssr/spa-mode'
-      preLoaderRoute: typeof DemoStartSsrSpaModeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demo/start/ssr/full-ssr': {
-      id: '/demo/start/ssr/full-ssr'
-      path: '/demo/start/ssr/full-ssr'
-      fullPath: '/demo/start/ssr/full-ssr'
-      preLoaderRoute: typeof DemoStartSsrFullSsrRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demo/start/ssr/data-only': {
-      id: '/demo/start/ssr/data-only'
-      path: '/demo/start/ssr/data-only'
-      fullPath: '/demo/start/ssr/data-only'
-      preLoaderRoute: typeof DemoStartSsrDataOnlyRouteImport
+    '/case-studies/fellowes': {
+      id: '/case-studies/fellowes'
+      path: '/case-studies/fellowes'
+      fullPath: '/case-studies/fellowes'
+      preLoaderRoute: typeof CaseStudiesFellowesRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -237,15 +662,36 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DemoTableRoute: DemoTableRoute,
-  DemoApiNamesRoute: DemoApiNamesRoute,
-  DemoSentryTestingRoute: DemoSentryTestingRoute,
-  DemoStartApiRequestRoute: DemoStartApiRequestRoute,
-  DemoStartServerFuncsRoute: DemoStartServerFuncsRoute,
-  DemoStartSsrDataOnlyRoute: DemoStartSsrDataOnlyRoute,
-  DemoStartSsrFullSsrRoute: DemoStartSsrFullSsrRoute,
-  DemoStartSsrSpaModeRoute: DemoStartSsrSpaModeRoute,
-  DemoStartSsrIndexRoute: DemoStartSsrIndexRoute,
+  AiReadyRoute: AiReadyRoute,
+  AvocadoLinuxWhitepaperRoute: AvocadoLinuxWhitepaperRoute,
+  AvocadoOsRoute: AvocadoOsRoute,
+  BookAMeetingRoute: BookAMeetingRoute,
+  CompanyRoute: CompanyRoute,
+  ContactRoute: ContactRoute,
+  DeveloperProgramRoute: DeveloperProgramRoute,
+  FirstBootRoute: FirstBootRoute,
+  IndustryConsumerElectronicsRoute: IndustryConsumerElectronicsRoute,
+  IndustryEnergyAndRenewablesRoute: IndustryEnergyAndRenewablesRoute,
+  IndustryHealthAndWearablesRoute: IndustryHealthAndWearablesRoute,
+  IndustryIndustrialIotRoute: IndustryIndustrialIotRoute,
+  IndustrySmarthomesRoute: IndustrySmarthomesRoute,
+  IndustryTelematicsRoute: IndustryTelematicsRoute,
+  JoinOurDiscordRoute: JoinOurDiscordRoute,
+  LearnMoreRoute: LearnMoreRoute,
+  LongTermSupportRoute: LongTermSupportRoute,
+  PartnerProgramRoute: PartnerProgramRoute,
+  PartnersRoute: PartnersRoute,
+  PeridioCoreRoute: PeridioCoreRoute,
+  PodcastBeyondTheBenchRoute: PodcastBeyondTheBenchRoute,
+  PodcastGuestFormRoute: PodcastGuestFormRoute,
+  ProvisioningGuideUpdatesRoute: ProvisioningGuideUpdatesRoute,
+  SignUpRoute: SignUpRoute,
+  UiRoute: UiRoute,
+  CaseStudiesFellowesRoute: CaseStudiesFellowesRoute,
+  CaseStudiesGraniteRoute: CaseStudiesGraniteRoute,
+  CaseStudiesSunAutomationRoute: CaseStudiesSunAutomationRoute,
+  CaseStudiesTellyRoute: CaseStudiesTellyRoute,
+  CaseStudiesIndexRoute: CaseStudiesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

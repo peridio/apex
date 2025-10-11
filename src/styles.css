@@ -1,15 +1,224 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme {
+  /* Font families */
+  --font-arial: Arial, Helvetica, sans-serif;
+  --font-montserrat: Montserrat, sans-serif;
+  --font-space-grotesk: 'Space Grotesk', sans-serif;
+
+  /* Primary Peridio colors */
+  --color-peridio-purple: #5f51ff;
+  --color-peridio-purple-light: #7f75ff;
+  --color-peridio-purple-lighter: #afa8ff;
+
+  /* Base fill colors */
+  --color-fill-base-shade-4: #1a1d21;
+
+  /* Gray scale colors */
+  --color-light-gray: #c2c2c2;
+  --color-medium-gray: #6e6e6e;
+  --color-charcoal: #2a2c37;
+  --color-off-white: #f0f0f0;
+  --color-dark-gray: #333333;
+  --color-icon-gray: #a9a9a9;
+
+  /* Purple accent shades */
+  --color-light-purple-accent: #b8b8ff;
+  --color-very-light-purple: #cac5ff;
+
+  /* Avocado OS brand colors */
+  --color-avocado-teal: #00ffd1;
+  --color-avocado-teal-hover: #00e6bd;
+
+  /* Shadow for buttons (from --shd) */
+  --shadow-button: 0px 3px 12px 3px rgba(0, 0, 0, 0.19);
+  --color-outline-transparent-secondary: rgba(110, 110, 110, 0.5);
+
+  /* Accordion animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  /* Sheet animations */
+  --animate-slide-in-from-right: slide-in-from-right 0.3s ease-out;
+  --animate-slide-out-to-right: slide-out-to-right 0.3s ease-out;
+  --animate-slide-in-from-left: slide-in-from-left 0.3s ease-out;
+  --animate-slide-out-to-left: slide-out-to-left 0.3s ease-out;
+  --animate-slide-in-from-top: slide-in-from-top 0.3s ease-out;
+  --animate-slide-out-to-top: slide-out-to-top 0.3s ease-out;
+  --animate-slide-in-from-bottom: slide-in-from-bottom 0.3s ease-out;
+  --animate-slide-out-to-bottom: slide-out-to-bottom 0.3s ease-out;
+  --animate-fade-in-0: fade-in-0 0.3s ease-out;
+  --animate-fade-out-0: fade-out-0 0.3s ease-out;
+
+  /* Generic animate-in and animate-out utilities */
+  --animate-in: slide-in-from-right 0.3s ease-out;
+  --animate-out: slide-out-to-right 0.3s ease-out;
+}
+
+:root {
+  /* Scaling variables for responsive typography */
+  --full-viewport: 100vw;
+  --section-max-width: 1200px;
+  --scaling-factor: min(var(--full-viewport), var(--section-max-width));
+  --theme-spx-ratio: calc(var(--scaling-factor) / 1002);
+}
+
+html,
+body {
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+
+html {
+  width: 100%;
+}
 
 body {
   @apply m-0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* Logo slider animation */
+@keyframes logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-150px * 11));
+  }
+}
+
+/* Pulse scale animation for glowing icons */
+@keyframes pulse-scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Accordion animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+/* Sheet slide animations */
+@keyframes slide-in-from-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out-to-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out-to-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-in-from-top {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out-to-top {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out-to-bottom {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+/* Fade animations */
+@keyframes fade-in-0 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out-0 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Mobile menu sheet overlay positioning */
+[data-radix-presence] [data-state='open'] {
+  z-index: 40;
+}
+
+/* Ensure the sheet overlay starts below the header */
+[data-radix-portal] > [data-radix-dialog-overlay] {
+  z-index: 40;
 }
